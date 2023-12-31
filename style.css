@@ -1,0 +1,200 @@
+:root{
+    /* ## Colors
+    ### Primary */
+    --Red: hsl(1, 90%, 64%);
+    --Blue: hsl(219, 85%, 26%);
+    /* ### Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Very-light-grayish-blue: hsl(210, 60%, 98%);
+    --Light-grayish-blue-1: hsl(211, 68%, 94%);
+    --Light-grayish-blue-2: hsl(205, 33%, 90%);
+    --Grayish-blue: hsl(219, 14%, 63%);
+    --Dark-grayish-blue: hsl(219, 12%, 42%);
+    --Very-dark-blue: hsl(224, 21%, 14%);
+}
+
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url(assets/fonts/PlusJakartaSans-VariableFont_wght.ttf) format("ttf");
+    font-weight: 500 800;
+}
+
+body{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--Very-light-grayish-blue);
+    color: var(--Very-dark-blue);
+}
+
+main{
+    background-color: var(--White);
+    width: 100%;
+    padding: 2rem 1rem;
+}
+
+p{
+    line-height: 1.5;
+    width: fit-content;
+}
+
+p, span{
+    cursor: text;
+}
+/*main header*/
+.main__header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.main__header-button{
+    color: var(--Very-dark-blue);
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+h1{
+    font-weight: 800;
+    color: var(--Very-dark-blue);
+    font-size: 1.8em;
+}
+
+.unread-counter{
+    color: var(--White);
+    background-color: var(--Blue);
+    padding: 0 1rem;
+    border-radius: 10px;
+    margin-left: 1rem;
+}
+/*notifications*/
+main{
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.1);
+    transition: all 1s;
+}
+
+.notification-container{
+    display: flex;
+    background-color: var(--Very-light-grayish-blue);
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    gap: 1rem;
+    transition: all 1s;
+}
+
+.notification-container-visited{
+    background: none;
+    cursor: default;
+}
+
+.notification-container-shared-picture{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+}
+
+.avatar-img{
+    max-width: 65px;
+    max-height: 65px;
+}
+
+.notification-text-container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.username-span{
+    font-weight: 800;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    font-size: 1em;
+}
+
+.relevant-span{
+    font-weight: 800;
+    color: var(--Blue);
+    cursor: pointer;
+    margin-left: 0.5rem;
+    font-size: 1em;
+}
+
+.relevant-span-visited{
+    color: var(--Grayish-blue);
+}
+
+.notification-age{
+    color: var(--Grayish-blue);
+    width: fit-content;
+}
+
+.unread-dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: var(--Red);
+    display: inline-block;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.unread-dot-visited{
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+}
+
+.shared-picture{
+    justify-self: flex-end;
+    cursor: pointer;
+    min-width: 60px;
+    min-height: 60px;
+}
+
+.shared-picture:hover{
+    filter: brightness(1.1);
+}
+
+.private-msg-p{
+    cursor: pointer;
+    border: 1px solid var(--Light-grayish-blue-2);
+    padding: 1rem;
+    background-color: var(--White);
+    border-radius: 10px;
+}
+
+.private-msg-p:hover{
+    background-color: var(--Light-grayish-blue-1);
+}
+/*footer*/
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); text-decoration: none; font-size: 14px; }
+.attribution a:hover { text-decoration: underline; }
+
+.relevant-span:hover, .username-span:hover, .main__header-button:hover{
+    color: var(--Blue);
+    filter: brightness(1.2);
+}
+
+@media only screen and (max-width: 400px) {
+    body{
+        font-size: 13px;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    main{
+        margin: 4rem 0;
+    }
+}
